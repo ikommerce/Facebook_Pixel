@@ -1,0 +1,14 @@
+<?php
+$AddToCartIsActive = Mage::getStoreConfig("otimizar_facebookpixel/events/add_to_cart");
+if($AddToCartIsActive):
+$_product = Mage::getModel('core/session')->getProductToShoppingCart() ?>
+<?php if ($_product && $_product->getId()): ?>
+    <script type="text/javascript">
+        fbq('track', 'AddToCart');
+    </script>
+    <?php Mage::getModel('core/session')->unsProductToShoppingCart(); ?>
+<?php endif; ?>
+<?php
+Mage::getModel('core/session')->unsProductToShoppingCart();
+endif;
+?>

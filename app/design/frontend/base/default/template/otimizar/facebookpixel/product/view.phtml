@@ -1,0 +1,32 @@
+<?php
+$fbcode = Mage::getStoreConfig("otimizar_facebookpixel/product/view_code");
+if($fbcode):
+    $_product = Mage::registry('product');
+
+    $fbcode = str_replace('{content_ids}',$_product->getData('entity_id'),$fbcode);
+
+    $category_name = '';
+    $categoryIds = $_product->getCategoryIds();
+
+    if(count($categoryIds) ){
+        $count=0;
+        foreach($categoryIds as $k => $firstCategoryId):
+            if($count>0){$category_name .= ' > ';}
+            $category_name .= Mage::getModel('catalog/category')->load($firstCategoryId)->getName();
+            $count++;
+        endforeach;
+    }
+
+    $fbcode = str_replace('{content_category}',$category_name,$fbcode);
+
+    $fbcode = str_replace('{content_name}',$_product->getData('name'),$fbcode);
+
+    $price = $_product->getData('price');
+    if(!$price){$price = $_product->getData('special_price');}
+    $price = number_format((double)$price, 2, ',', '.');
+
+    $fbcode = str_replace('{value}',$price,$fbcode);
+
+    echo $fbcode;
+endif;
+?>
