@@ -1,3 +1,4 @@
+
 <?xml version="1.0"?>
 <config>
     <tabs>
@@ -31,14 +32,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </enable>
-                        <header_code>
-                            <label>Code for header</label>
-                            <frontend_type>textarea</frontend_type>
+                        <fbq_code>
+                            <label>Init Code</label>
+                            <frontend_type>text</frontend_type>
                             <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </header_code>
+                        </fbq_code>
                     </fields>
                 </general>
                 <product>
