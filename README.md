@@ -15,7 +15,7 @@ Magento module for facebook pixel
 
 - 1. Create file *composer.json* with this sample content:
 
-<pre>
+```javascript
 
 {
     "name": "magento/store",
@@ -35,9 +35,12 @@ Magento module for facebook pixel
         "magento-force": true
     }
 }
-</pre>
+```
 
-- 2. run "composer update otimizar/facebook_pixel"
+- 2. run 
+```bash
+$ composer update otimizar/facebook_pixel"
+```
 
 ## more about facebook pixel setup
 
