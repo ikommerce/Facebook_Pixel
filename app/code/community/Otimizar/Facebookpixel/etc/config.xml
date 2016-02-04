@@ -54,8 +54,8 @@ fbq('track', 'ViewContent', {
  });
 </script>]]></view_code>
             </product>
-            <purchase>
-                <view_code><![CDATA[<!-- Facebook Pixel Code -->
+            <checkout>
+                <purchase><![CDATA[<!-- Facebook Pixel Code -->
                     <script>
                         fbq('track', 'Purchase', {
                         content_ids: ['{content_ids}'],
@@ -65,8 +65,8 @@ fbq('track', 'ViewContent', {
                         });
                     </script>
                     <!-- End Facebook Pixel Code -->]]>
-                </view_code>
-            </purchase>
+                </purchase>
+            </checkout>
         </otimizar_facebookpixel>
     </default>
     <adminhtml>
