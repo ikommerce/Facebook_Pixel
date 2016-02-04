@@ -2,4 +2,3 @@ app/code/community/Otimizar/Facebookpixel app/code/community/Otimizar/Facebookpi
 app/etc/modules/Otimizar_Facebookpixel.xml
 app/design/frontend/base/default/layout/otimizar/facebookpixel.xml app/design/frontend/base/default/layout/otimizar/facebookpixel.xml
 app/design/frontend/base/default/template/otimizar app/design/frontend/base/default/template/otimizar
-README.md app/code/community/Otimizar/Facebookpixel/README.md
