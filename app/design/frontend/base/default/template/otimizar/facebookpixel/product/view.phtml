@@ -23,7 +23,7 @@ if($fbcode):
 
     $price = $_product->getData('price');
     if(!$price){$price = $_product->getData('special_price');}
-    $price = number_format((double)$price, 2, ',', '.');
+    $price = number_format((double)$price, 2, '.', ',');
 
     $fbcode = str_replace('{value}',$price,$fbcode);
 
