@@ -54,6 +54,19 @@ fbq('track', 'ViewContent', {
  });
 </script>]]></view_code>
             </product>
+            <purchase>
+                <view_code><![CDATA[<!-- Facebook Pixel Code -->
+                    <script>
+                        fbq('track', 'Purchase', {
+                        content_ids: ['{content_ids}'],
+                        content_type: 'product',
+                        value: {value},
+                        currency: 'BRL'
+                        });
+                    </script>
+                    <!-- End Facebook Pixel Code -->]]>
+                </view_code>
+            </purchase>
         </otimizar_facebookpixel>
     </default>
     <adminhtml>
