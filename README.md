@@ -1,11 +1,12 @@
 # Facebook_Pixel - Magento 1.x Module
 
-Magento module for facebook pixel
-Render facebook code on header and track **PageView** 
+Magento module for facebook pixel.
+
+Render facebook code on header and track **PageView**.
+
 Other events can be enable from admin
 
-
-## features
+## Features
 
 - Provides a minimum of three required events must be added to your website:
  - **ViewContent**
@@ -47,7 +48,7 @@ Other events can be enable from admin
 $ composer update "otimizar/facebook_pixel"
 ```
 
-## more about facebook pixel setup
+## More about facebook pixel setup
 
 - https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/product-audiences/v2.5#setuppixel
 
