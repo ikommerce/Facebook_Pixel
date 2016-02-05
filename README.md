@@ -1,15 +1,20 @@
-# Facebook_Pixel
+# Facebook_Pixel - Magento 1.x Module
 
 Magento module for facebook pixel
+Render facebook code on header and track **PageView** 
+Other events can be enable from admin
+
 
 ## features
 
 - Provides a minimum of three required events must be added to your website:
- - ViewContent
- - AddToCart
- - Purchase
+ - **ViewContent**
+   - specifque code for product view track
+ - **AddToCart**
+   - rendered just one time after magento event "controller_action_predispatch_checkout_cart_add"
+ - **Purchase**
+   - rendered on "checkout_onepage_success"
 
-- ViewContent event for product view
 
 ## HOW TO USE
 
@@ -39,7 +44,7 @@ Magento module for facebook pixel
 
 - 2. run 
 ```bash
-$ composer update otimizar/facebook_pixel"
+$ composer update "otimizar/facebook_pixel"
 ```
 
 ## more about facebook pixel setup
