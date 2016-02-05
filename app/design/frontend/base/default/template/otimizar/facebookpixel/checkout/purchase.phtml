@@ -1,23 +1,24 @@
 <?php
-$fbcode = Mage::getStoreConfig("otimizar_facebookpixel/checkout/purchase");
-if($fbcode):
+$enable_on_purchase = Mage::getStoreConfig("otimizar_facebookpixel/checkout/enable_on_purchase");
+if($enable_on_purchase):
+    $fbcode = Mage::getStoreConfig("otimizar_facebookpixel/checkout/purchase");
+    if($fbcode):
+        $lastOrder = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId());
+        $items = $lastOrder->getAllVisibleItems();
+        $productIds = array();
 
-    $lastOrder = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId());
-    $items = $lastOrder->getAllVisibleItems();
-    $productIds = array();
+        foreach ($items as $item) {
+            array_push($productIds,$item->getData('product_id'));
+        }
 
-    foreach ($items as $item) {
-        array_push($productIds,$item->getData('product_id'));
-    }
+        $fbcode = str_replace('[\'{content_ids}\']',Zend_Json::encode($productIds), $fbcode);
 
-    $fbcode = str_replace('[\'{content_ids}\']',Zend_Json::encode($productIds), $fbcode);
+        $price = $lastOrder->getGrandTotal();
+        $price = number_format((double)$price, 2, '.', ',');
 
+        $fbcode = str_replace('{value}',$price,$fbcode);
 
-    $price = $lastOrder->getGrandTotal();
-    $price = number_format((double)$price, 2, '.', ',');
-
-    $fbcode = str_replace('{value}',$price,$fbcode);
-
-    echo $fbcode;
+        echo $fbcode;
+    endif;
 endif;
 ?>

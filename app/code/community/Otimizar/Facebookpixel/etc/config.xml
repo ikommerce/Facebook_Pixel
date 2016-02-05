@@ -52,7 +52,7 @@ fbq('track', 'ViewContent', {
   value: {value},
   currency: 'BRL'
  });
-</script>]]></view_code>
+ </script>]]></view_code>
             </product>
             <checkout>
                 <purchase><![CDATA[<!-- Facebook Pixel Code -->
