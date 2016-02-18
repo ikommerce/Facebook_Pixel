@@ -1,14 +1,27 @@
 <?php
 $AddToCartIsActive = Mage::getStoreConfig("otimizar_facebookpixel/events/add_to_cart");
 if($AddToCartIsActive):
-$_product = Mage::getModel('core/session')->getProductToShoppingCart() ?>
-<?php if ($_product && $_product->getId()): ?>
-    <script type="text/javascript">
-        fbq('track', 'AddToCart');
-    </script>
-    <?php Mage::getModel('core/session')->unsProductToShoppingCart(); ?>
-<?php endif; ?>
-<?php
-Mage::getModel('core/session')->unsProductToShoppingCart();
+    $_product = Mage::getModel('core/session')->getProductToShoppingCart() ?>
+    <?php 
+    if ($_product && $_product->getId()): 
+	    $price = $_product->getData("special_price");
+	    if(!$price){$price = $_product->getPrice();}
+	    $price = number_format($price,2,".","");
+	    ?>
+	    <script type="text/javascript">
+	        fbq('track', 'AddToCart', {
+	            content_ids: ['<?php echo $_product->getId();?>'],
+	            content_type: 'product',
+	            value: <?php echo $price;?>,
+	            currency: 'BRL'
+	        });
+	        });
+	    </script>
+	    <?php 
+	    Mage::getModel('core/session')->unsProductToShoppingCart();
+	endif; 
+	?>
+    <?php
+    Mage::getModel('core/session')->unsProductToShoppingCart();
 endif;
 ?>
