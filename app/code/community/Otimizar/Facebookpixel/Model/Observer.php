@@ -11,7 +11,7 @@ class Otimizar_Facebookpixel_Model_Observer{
                 return;
             }
             $categories = $product->getCategoryIds();
-            Mage::getModel('core/session')->setProductToShoppingCart(
+            Mage::getModel('core/session')->setData('ProductToShoppingCart',
                 new Varien_Object(array(
                     'id' => $product->getId(),
                     'qty' => Mage::app()->getRequest()->getParam('qty', 1),

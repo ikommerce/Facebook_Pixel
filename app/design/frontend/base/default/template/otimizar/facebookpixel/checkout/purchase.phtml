@@ -17,8 +17,10 @@ if($enable_on_purchase):
         $price = number_format((double)$price, 2, '.', ',');
 
         $fbcode = str_replace('{value}',$price,$fbcode);
-
+        echo '<script type="text/javascript">';
+        echo Mage::getStoreConfig("otimizar_facebookpixel/general/fbq_checker");
         echo $fbcode;
+        echo '</script>';
     endif;
 endif;
 ?>

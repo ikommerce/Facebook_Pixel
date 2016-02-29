@@ -42,9 +42,23 @@
     </frontend>
     <default>
         <otimizar_facebookpixel>
+            <general>
+                <fbq_checker><![CDATA[(function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = '//connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+        }
+    })();
+    window._fbq = window._fbq || [];]]></fbq_checker>
+            </general>
             <product>
-                <view_code><![CDATA[<script>
-fbq('track', 'ViewContent', {
+                <view_code><![CDATA[
+fbq.push('track', 'ViewContent', {
   content_name: '{content_name}',
   content_category: '{content_category}',
   content_ids: ['{content_ids}'],
@@ -52,18 +66,16 @@ fbq('track', 'ViewContent', {
   value: {value},
   currency: 'BRL'
  });
- </script>]]></view_code>
+ ]]></view_code>
             </product>
             <checkout>
                 <purchase><![CDATA[<!-- Facebook Pixel Code -->
-                    <script>
-                        fbq('track', 'Purchase', {
+                        fbq.push('track', 'Purchase', {
                         content_ids: ['{content_ids}'],
                         content_type: 'product',
                         value: {value},
                         currency: 'BRL'
                         });
-                    </script>
                     <!-- End Facebook Pixel Code -->]]>
                 </purchase>
             </checkout>
