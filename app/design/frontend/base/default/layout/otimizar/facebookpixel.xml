@@ -20,4 +20,9 @@
             <block type="core/template" name="otimizar_facebookpixel_purchase" template="otimizar/facebookpixel/checkout/purchase.phtml"/>
         </reference>
     </checkout_onepage_success>
+    <maxima_cielo_pay_verify translate="label">
+        <reference name="after_body_start">
+            <block type="core/template" name="otimizar_facebookpixel_purchase" template="otimizar/facebookpixel/checkout/purchase.phtml"/>
+        </reference>
+    </maxima_cielo_pay_verify>
 </layout>
