@@ -17,9 +17,9 @@ if($fbcode):
         endforeach;
     }
 
-    $fbcode = str_replace('{content_category}', $this->escapeHtml($category_name), $fbcode);
+    $fbcode = str_replace('{content_category}', $this->jsQuoteEscape($category_name), $fbcode);
 
-    $fbcode = str_replace('{content_name}', $this->escapeHtml($_product->getData('name')),$fbcode);
+    $fbcode = str_replace('{content_name}', $this->jsQuoteEscape($_product->getData('name')),$fbcode);
 
     $price = $_product->getData('price');
     if(!$price){$price = $_product->getData('special_price');}
