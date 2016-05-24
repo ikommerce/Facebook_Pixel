@@ -3,7 +3,7 @@
         <tabs>
             <otimizar translate="label" module="otimizar_facebookpixel">
                 <label>otimizar</label>
-                <sort_order>10</sort_order>
+                <sort_order>100</sort_order>
             </otimizar>
         </tabs>
         <sections>
