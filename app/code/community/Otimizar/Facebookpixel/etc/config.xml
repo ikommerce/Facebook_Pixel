@@ -64,7 +64,7 @@ fbq.push('track', 'ViewContent', {
   content_ids: ['{content_ids}'],
   content_type: 'product',
   value: {value},
-  currency: 'BRL'
+  currency: 'EUR'
  });
  ]]></view_code>
             </product>
@@ -74,7 +74,7 @@ fbq.push('track', 'ViewContent', {
                         content_ids: ['{content_ids}'],
                         content_type: 'product',
                         value: {value},
-                        currency: 'BRL'
+                        currency: 'EUR'
                         });
                     <!-- End Facebook Pixel Code -->]]>
                 </purchase>
