@@ -11,7 +11,7 @@ if($AddToCartIsActive):
 	    <script type="text/javascript">
             <?php echo Mage::getStoreConfig("otimizar_facebookpixel/general/fbq_checker");?>
             fbq.push('track', 'AddToCart', {
-	            content_ids: ['<?php echo $_product->getId();?>'],
+	            content_ids: ['<?php echo $_product->getSku();?>'],
 	            content_type: 'product',
 	            value: <?php echo $price;?>,
 	            currency: 'EUR'

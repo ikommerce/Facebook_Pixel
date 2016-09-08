@@ -14,6 +14,7 @@ class Otimizar_Facebookpixel_Model_Observer{
             Mage::getModel('core/session')->setData('ProductToShoppingCart',
                 new Varien_Object(array(
                     'id' => $product->getId(),
+                	'sku' => $product->getSku(),
                     'qty' => Mage::app()->getRequest()->getParam('qty', 1),
                     'name' => $product->getName(),
                     'price' => $product->getPrice(),

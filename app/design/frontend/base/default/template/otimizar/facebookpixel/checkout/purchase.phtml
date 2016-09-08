@@ -8,7 +8,7 @@ if($enable_on_purchase):
         $productIds = array();
 
         foreach ($items as $item) {
-            array_push($productIds,$item->getData('product_id'));
+            array_push($productIds,$item->getData('sku'));
         }
 
         $fbcode = str_replace('[\'{content_ids}\']',Zend_Json::encode($productIds), $fbcode);

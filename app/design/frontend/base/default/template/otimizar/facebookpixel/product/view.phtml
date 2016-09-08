@@ -3,7 +3,7 @@ $fbcode = Mage::getStoreConfig("otimizar_facebookpixel/product/view_code");
 if($fbcode):
     $_product = Mage::registry('product');
 
-    $fbcode = str_replace('{content_ids}',$_product->getData('entity_id'),$fbcode);
+    $fbcode = str_replace('{content_ids}',$_product->getData('sku'),$fbcode);
 
     $category_name = '';
     $categoryIds = $_product->getCategoryIds();
