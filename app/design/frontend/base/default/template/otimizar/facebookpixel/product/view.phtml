@@ -7,7 +7,7 @@ if($fbcode):
 
     $category_name = '';
     $categoryIds = $_product->getCategoryIds();
-
+    $currency = Mage::app()->getStore()->getCurrentCurrencyCode();
     if(count($categoryIds) ){
         $count=0;
         foreach($categoryIds as $k => $firstCategoryId):
@@ -20,13 +20,13 @@ if($fbcode):
     $fbcode = str_replace('{content_category}', $this->jsQuoteEscape($category_name), $fbcode);
 
     $fbcode = str_replace('{content_name}', $this->jsQuoteEscape($_product->getData('name')),$fbcode);
-
+	
     $price = $_product->getData('price');
     if(!$price){$price = $_product->getData('special_price');}
     $price = number_format((double)$price, 2, '.', ',');
 
     $fbcode = str_replace('{value}',$price,$fbcode);
-
+    $fbcode = str_replace('{currency}',$currency,$fbcode);
     echo '<script type="text/javascript">';
     echo Mage::getStoreConfig("otimizar_facebookpixel/general/fbq_checker");
     echo $fbcode;

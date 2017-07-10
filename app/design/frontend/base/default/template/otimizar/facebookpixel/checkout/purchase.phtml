@@ -6,7 +6,7 @@ if($enable_on_purchase):
         $lastOrder = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId());
         $items = $lastOrder->getAllVisibleItems();
         $productIds = array();
-
+        $currency = Mage::app()->getStore()->getCurrentCurrencyCode();
         foreach ($items as $item) {
             array_push($productIds,$item->getData('sku'));
         }
@@ -15,8 +15,9 @@ if($enable_on_purchase):
 
         $price = $lastOrder->getGrandTotal();
         $price = number_format((double)$price, 2, '.', ',');
-
+		
         $fbcode = str_replace('{value}',$price,$fbcode);
+        $fbcode = str_replace('{currency}',$currency,$fbcode);
         echo '<script type="text/javascript">';
         echo Mage::getStoreConfig("otimizar_facebookpixel/general/fbq_checker");
         echo $fbcode;
