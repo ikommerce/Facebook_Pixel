@@ -15,7 +15,7 @@ if($AddToCartIsActive):
 	            content_ids: ['<?php echo $_product->getSku();?>'],
 	            content_type: 'product',
 	            value: <?php echo $price;?>,
-	            currency:  <?php echo $currency;?>
+	            currency:  '<?php echo $currency;?>'
 	        });
 	    </script>
 	    <?php
